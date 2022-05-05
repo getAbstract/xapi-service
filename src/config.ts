@@ -82,6 +82,8 @@ export default {
     awsConfig: {
       apiVersion: '2006-03-01',
       region: getStringOption(process.env.FS_S3_REGION, globalAwsRegion),
+      endpoint: process.env.FS_S3_ENDPOINT,
+      s3ForcePathStyle: process.env.FS_S3_ENDPOINT != null,
       tls: true,
       credentials: {
         accessKeyId: getStringOption(process.env.FS_S3_ACCESS_KEY_ID, globalAwsIamAccessKeyId),
